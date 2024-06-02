@@ -95,6 +95,7 @@ export const debounce = (func: (...args: any[]) => void, delay: number) => {
 
 // GE IMAGE SIZE
 export type AspectRatioKey = keyof typeof aspectRatioOptions;
+
 export const getImageSize = (
   type: string,
   image: any,
@@ -115,6 +116,8 @@ export const download = (url: string, filename: string) => {
     throw new Error("Resource URL not provided! You need to provide one");
   }
 
+  console.log(url);
+  
   fetch(url)
     .then((response) => response.blob())
     .then((blob) => {
